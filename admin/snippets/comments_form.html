@@ -1,0 +1,78 @@
+<div class="comment-form">
+    <cms:if k_is_commentable>
+        <cms:form method="post" class="k_form">
+            <cms:if k_success>
+                <cms:process_comment />
+                <cms:if k_process_comment_success>
+                    <cms:send_mail from=k_email_from to=k_email_to subject='Comment posted'>
+                        The following comment has been posted at your site:
+                        <cms:show k_success />
+                    </cms:send_mail>
+
+                    <div class="k_successmessage">
+                        <p style="text-align:center; margin: 0px 10px auto; color:white"><i class="fa fa-check"></i> Thank you for the feedback!
+                            <br> Your comment awaits moderation and will be published as soon as it is reviewed.
+                        </p>
+                    </div>
+                    <cms:else />
+                    <div class="k_errormessage">
+                        <p style="text-align:center; margin: 0px 10px auto; color:white">
+                            Could not post comment!
+                            <br> The following error occured while processing your comment:
+                            <br>
+                            <cms:show k_process_comment_error />
+                        </p>
+                    </div>
+
+                </cms:if>
+
+                <cms:else />
+
+                <cms:if k_error>
+                    <div style="text-align:left" class="k_errormessage">
+                        <p style="margin-left:10px; color:white">Fields incomplete!<p>
+                        <ul>
+                            <cms:each k_error>
+                                <li style="color:white; list-style:none;">
+                                    <cms:show item />
+                                </li>
+                            </cms:each>
+                        </ul>
+                    </div>
+                </cms:if>
+                <div class="commentinputboxes">
+                    <cms:if k_logged_out>
+                        <p class="comment-input">
+                            <label for="author">Name </label>
+                            <cms:input type="text" name="k_author" size="22" tabindex="1" required="1" />
+
+                        </p>
+
+                        <p class="comment-input">
+                            <label for="email">Email </label>
+                            <cms:input type="text" name="k_email" size="22" tabindex="2" validator="email" required="1" />
+
+                        </p>
+
+                        <cms:else />
+                        <p style="color:white">
+                            Logged in as <b><cms:show k_user_title /></b>.
+                            <a href="<cms:show k_logout_link />" onclick="if( confirm('Are you sure you want to logout?') ) { return true; } return false;"> Logout &raquo;</a>
+                        </p>
+                    </cms:if>
+
+                    <p class="comment-input">
+                        <label for="email">Review </label>
+                        <cms:input type="textarea" name="k_comment" rows="10" cols="10" tabindex="4" validator_msg="required=Please enter something as comment" required="1" />
+
+                        <br>
+                    </p>
+
+                    <cms:input type="submit" value="Leave Review" name="submit" />
+
+            </cms:if>
+            </div>
+        </cms:form>
+
+</div>
+</cms:if>
