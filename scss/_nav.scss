@@ -1,0 +1,28 @@
+nav.navbar {
+    background: #1a1a1a;
+
+    a.navbar-brand {
+        img {
+            width: 200px;
+        }
+    }
+
+    ul.navbar-nav {
+        li > a {
+            text-transform: uppercase;
+            font-weight: 700;
+            margin: 15px;
+            padding: 0 !important;
+
+            &:hover {
+                color: #fff;
+                border-bottom: 3px solid #fff;
+                margin-bottom: 3px;
+            }
+
+            &.tel-number {
+                color: #fff;
+            }
+        }
+    }
+}

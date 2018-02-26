@@ -1,0 +1,10 @@
+@media (max-width: 991px) {
+    nav.navbar {    
+        ul.navbar-nav {
+            li > a:hover {
+                border: 0;
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
