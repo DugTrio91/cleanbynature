@@ -1,3 +1,5 @@
+<?php require_once( 'couch/cms.php' ); ?>
+<?php include 'functions.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,12 +23,15 @@
   <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700'
         rel='stylesheet'
         type='text/css'>
-<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
   <link rel="stylesheet" href="css/stylesheet.css" />
   <meta name="description"
         content="We offer a high quality services across a variety of sectors operating in Co Durham, Yorkshire and Teeside areas. You will receive a reliable, trusted cost effective service tailored to your needs. Fully insured for peace of mind. Professionally vetted and reliable. No hidden charges. No minimum Contract" />
   <meta name="author" content="James Hornby" />
-  <title>Clean by Nature</title>
+  <title>
+      <?= "Clean by Nature - " . ucfirst((new functions)->getCurrentPage()) ?>
+  </title>
 </head>
 <body>
 <?php include 'nav.php'; ?>
