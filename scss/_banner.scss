@@ -1,0 +1,57 @@
+#banner {    
+    .carousel {
+        padding: 0;
+    }
+    
+    .carousel-item {
+        height: 550px;
+        background-size: cover !important;
+
+        &.regular-cleaning {
+            background: url($banner-carousel-a) center right no-repeat;
+        }
+        
+        &.office-cleaning {
+            background: url($banner-carousel-b) center right no-repeat;
+        }
+        
+        &.tenancy-cleaning {
+            background: url($banner-carousel-c) center right no-repeat;
+        }
+
+        .carousel-item-text {
+            height: inherit;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            line-height: 26px;
+
+            h1 {
+                text-transform: uppercase;
+            }
+
+            p {
+                font-size: $base-font-size + 4px;
+            }
+        }
+    }
+}
+
+#inner-banner {
+    min-height: 300px;
+    padding: 15px;
+    text-align: center;
+    color: #fff;
+    background-size: cover !important;
+
+    img {
+        height: 50px;
+        margin-bottom: 15px;
+    }
+
+    &.testimonials {
+        background: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)), 
+            url($banner-carousel-a) center right no-repeat;
+    }
+}
