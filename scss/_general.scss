@@ -6,4 +6,25 @@ body {
 
 a {
     color: $cbn-green;
+    
+    &:hover {
+        color: $cbn-green;
+        text-decoration: underline;
+    }
+}
+
+h1, h2, h3, h4, h5 {
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+h1, h2, h3, h4, p, a, li, span {
+    margin-bottom: 15px;
+}
+
+.__center-align {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
 }
