@@ -1,28 +1,207 @@
+/** Typography **/
+/** Banner **/
 body {
   font-family: 'Lato', sans-serif; }
 
 a {
   color: #edf15e; }
+  a:hover {
+    color: #edf15e;
+    text-decoration: underline; }
+
+h1, h2, h3, h4, h5 {
+  text-transform: uppercase;
+  font-weight: 300; }
+
+h1, h2, h3, h4, p, a, li, span {
+  margin-bottom: 15px; }
+
+.__center-align {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center; }
 
 nav.navbar {
-  background: #1a1a1a; }
-  nav.navbar a.navbar-brand img {
-    width: 200px; }
-  nav.navbar ul.navbar-nav li > a {
-    text-transform: uppercase;
-    font-weight: 700;
-    margin: 15px;
-    padding: 0 !important; }
-    nav.navbar ul.navbar-nav li > a:hover {
-      color: #fff;
-      border-bottom: 3px solid #fff;
-      margin-bottom: 3px; }
-    nav.navbar ul.navbar-nav li > a.tel-number {
-      color: #fff; }
+  background: #333;
+  padding-bottom: 0; }
+  nav.navbar a.navbar-brand {
+    margin-bottom: 0; }
+    nav.navbar a.navbar-brand img {
+      width: 200px; }
+  nav.navbar ul.navbar-nav li {
+    margin-bottom: 0; }
+    nav.navbar ul.navbar-nav li a {
+      text-transform: uppercase;
+      font-weight: 700;
+      margin: 0 19px;
+      padding: 30px 0 !important; }
+      nav.navbar ul.navbar-nav li a.tel-number {
+        color: #fff; }
 
-@media (max-width: 991px) {
+@media (min-width: 992px) {
   nav.navbar ul.navbar-nav li > a:hover {
-    border: 0;
-    margin-bottom: 15px; } }
+    color: #fff;
+    padding-bottom: 27px !important;
+    margin-bottom: -3px;
+    border-bottom: 3px solid #fff; } }
+@media (max-width: 991px) {
+  nav.navbar button.navbar-toggler i {
+    color: #fff;
+    font-size: 30px; }
+  nav.navbar ul.navbar-nav li > a:hover {
+    color: #fff;
+    border: 0; } }
+#banner .carousel {
+  padding: 0; }
+#banner .carousel-item {
+  height: 550px;
+  background-size: cover !important; }
+  #banner .carousel-item.regular-cleaning {
+    background: url("/images/banner/woman-cleaning-kitchen.jpg") center right no-repeat; }
+  #banner .carousel-item.office-cleaning {
+    background: url("/images/banner/stock-photo-woman-who-cleans-the-floor-of-the-house-103819709.jpg") center right no-repeat; }
+  #banner .carousel-item.tenancy-cleaning {
+    background: url("/images/banner/stock-photo-woman-cleaning-the-counter-in-the-kitchen-117715075.jpg") center right no-repeat; }
+  #banner .carousel-item .carousel-item-text {
+    height: inherit;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    line-height: 26px; }
+    #banner .carousel-item .carousel-item-text h1 {
+      text-transform: uppercase; }
+    #banner .carousel-item .carousel-item-text p {
+      font-size: 22px; }
+
+#inner-banner {
+  min-height: 300px;
+  padding: 15px;
+  text-align: center;
+  color: #fff;
+  background-size: cover !important; }
+  #inner-banner img {
+    height: 50px;
+    margin-bottom: 15px; }
+  #inner-banner.testimonials {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/banner/woman-cleaning-kitchen.jpg") center right no-repeat; }
+
+@media (min-width: 768px) {
+  #banner .carousel-item-text h1 {
+    font-size: 76px;
+    line-height: 75px; } }
+@media (max-width: 767px) {
+  #banner .carousel-item-text h1 {
+    line-height: 46px; } }
+.introduction {
+  background: #f5f5f5;
+  padding: 30px 0 15px 0; }
+  .introduction .introduction-content {
+    margin-bottom: 30px; }
+    .introduction .introduction-content p {
+      font-size: 24px; }
+    .introduction .introduction-content.right {
+      text-align: center; }
+    .introduction .introduction-content ul {
+      max-width: 300px;
+      margin: auto;
+      list-style: none;
+      text-align: left; }
+      .introduction .introduction-content ul i {
+        color: #edf15e;
+        vertical-align: middle;
+        margin-right: 5px; }
+
+.services {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center; }
+  .services img {
+    margin: 15px 0; }
+
+@media (min-width: 992px) {
+  .introduction.left {
+    text-align: left; } }
+.testimonials-container ul.comment-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 25px 0; }
+.testimonials-container .comment-form {
+  background: #edf15e;
+  padding: 25px;
+  text-align: center;
+  margin-bottom: 25px; }
+  .testimonials-container .comment-form a {
+    color: #000;
+    text-decoration: underline; }
+  .testimonials-container .comment-form i {
+    font-size: 50px;
+    margin-bottom: 15px; }
+    .testimonials-container .comment-form i.fa-times-circle {
+      color: #e25a5a; }
+    .testimonials-container .comment-form i.fa-check {
+      color: #68c15e; }
+  .testimonials-container .comment-form .comment-input {
+    position: relative; }
+    .testimonials-container .comment-form .comment-input label {
+      visibility: hidden;
+      font-size: 0; }
+    .testimonials-container .comment-form .comment-input .floating-label {
+      position: absolute;
+      pointer-events: none;
+      left: 30px;
+      top: 40px;
+      transition: .2s ease all;
+      color: #a0a0a0; }
+    .testimonials-container .comment-form .comment-input input,
+    .testimonials-container .comment-form .comment-input textarea {
+      width: 100%;
+      border: none;
+      margin-bottom: 15px;
+      padding: 15px;
+      min-height: 30px; }
+      .testimonials-container .comment-form .comment-input input:focus ~ .floating-label, .testimonials-container .comment-form .comment-input input:not(:focus):valid ~ .floating-label,
+      .testimonials-container .comment-form .comment-input textarea:focus ~ .floating-label,
+      .testimonials-container .comment-form .comment-input textarea:not(:focus):valid ~ .floating-label {
+        top: 0;
+        left: 15px;
+        font-size: 14px;
+        color: #000; }
+    .testimonials-container .comment-form .comment-input textarea:focus ~ .floating-label, .testimonials-container .comment-form .comment-input textarea:not(:focus):valid ~ .floating-label {
+      left: 0;
+      color: #000; }
+    .testimonials-container .comment-form .comment-input textarea ~ .floating-label {
+      left: 15px; }
+  .testimonials-container .comment-form .submit-button {
+    text-align: right; }
+    .testimonials-container .comment-form .submit-button input {
+      background: #000;
+      border: none;
+      color: #fff;
+      padding: 10px 30px;
+      font-size: 20px;
+      margin-top: 15px; }
+      .testimonials-container .comment-form .submit-button input:hover {
+        background: #404040; }
+
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 30px 0; }
+  footer .footer-container {
+    margin: 15px 0; }
+    footer .footer-container a {
+      display: block;
+      margin-bottom: 0;
+      color: #fff; }
+      footer .footer-container a:hover {
+        text-decoration: none; }
+    footer .footer-container .social-media > a {
+      display: inline; }
+      footer .footer-container .social-media > a i {
+        font-size: 32px;
+        margin: 5px; }
+  footer img {
+    height: 50px; }
 
 /*# sourceMappingURL=stylesheet.css.map */
