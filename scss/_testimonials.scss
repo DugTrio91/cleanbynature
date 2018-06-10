@@ -1,0 +1,96 @@
+.testimonials-container {
+    ul.comment-list {
+        list-style: none;
+        padding-left: 0;
+        margin: 25px 0;
+    }
+
+    .comment-form {
+        background: $cbn-green;
+        padding: 25px;
+        text-align: center;
+        margin-bottom: 25px;
+
+        a {
+            color: #000;
+            text-decoration: underline;
+        }
+
+        i {
+            font-size: 50px;
+            margin-bottom: 15px;
+
+            &.fa-times-circle {
+                color: #e25a5a;
+            }
+
+            &.fa-check {
+                color: #68c15e;
+            }
+        }
+
+        .comment-input {
+            position: relative;
+
+            label {
+                visibility: hidden;
+                font-size: 0;
+            }
+            
+            .floating-label {
+                position: absolute;
+                pointer-events: none;
+                left: 30px;
+                top: 40px;
+                transition: .2s ease all;
+                color: #a0a0a0;
+            }
+
+            input,
+            textarea {
+                width: 100%;
+                border: none;
+                margin-bottom: 15px;
+                padding: 15px;
+                min-height: 30px;
+                
+                &:focus ~ .floating-label,
+                &:not(:focus):valid ~ .floating-label {
+                    top: 0;
+                    left: 15px;
+                    font-size: 14px;
+                    color: #000;
+                }
+            }
+
+            textarea {
+                &:focus ~ .floating-label,
+                &:not(:focus):valid ~ .floating-label {
+                    left: 0;
+                    color: #000;
+                }
+
+                & ~ .floating-label {
+                    left: 15px;
+                }
+            }
+        }
+
+        .submit-button {
+            text-align: right;
+
+            input {
+                background: #000;
+                border: none;
+                color: #fff;
+                padding: 10px 30px;
+                font-size: 20px;
+                margin-top: 15px;
+
+                &:hover {
+                    background: lighten($color: #000, $amount: 25%)
+                }
+            }
+        }
+    }
+}
